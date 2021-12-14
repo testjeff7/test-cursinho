@@ -1,0 +1,138 @@
+/*navbar*/
+.navbar-light{
+    background: linear-gradient(180deg, #ED433C 0%, #E57773 0%, #ED433C 0.01%, #F4712D 100%);
+}
+
+.navbar-brand{
+    margin: 0 20% 0 80px;
+}
+.nav-link{
+    margin: 0 10px 0 10px;
+    font-style: normal !important;
+}
+.navbar .navbar-nav .nav-link{
+    color: #F5F8FC;
+    font-family: 'Montserrat';
+    letter-spacing: 1.35px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*navbar*/
+
+/*hover navbar*/
+#navbar .navbar-nav a {
+    position: relative;
+    color: #F5F8FC;
+    text-decoration: none;  
+  }
+  
+#navbar .navbar-nav a:before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 1px;
+    bottom: 0;
+    left: 4px;
+    background-color: #F5F8FC;;
+
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+#navbar .navbar-nav a:hover:before {
+    
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+/*hover navbar*/
+
+footer{
+    border-top: 1px solid #CC2F29;
+    clear: both;
+    margin-top: 50px; 
+}
+
+#action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #87c940;
+    color: #FFF;
+    background-color: #a0d468;
+    width: 60%;
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-top: 20px ;
+   }
+
+h2{
+font-size: 40px;
+
+}
+.left{
+    width: 50%;
+    float: left;
+    padding-right: 40px;
+    margin-bottom: 119px;
+}
+.right{
+    width: 50%;
+    float: right;
+    padding-left: 40px;
+    border-left: 3px solid #BDBDBD;
+    padding-bottom: 35%;
+
+}
+body{
+    background: #F5F8FC;
+}
+.numero{
+    text-align: center;
+    display: inline;
+    /* font-family: 'Nunito'; */
+}
+h5{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 50px;
+    color: #828282;
+    display: inline
+}
+h6{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    padding-top: 50px;
+}
+.fa-home, .fa-chevron-right{
+    color: #828282;
+
+}
+@media screen and (max-width: 425px){
+    .navbar-brand{
+        margin :0;
+    }
+    .left{
+        width: 100%;
+        float: none;
+        padding-right: 0;
+    }
+    .right{
+        width: 100%;
+        float: none;
+        padding-left: 0;
+        border-left: none;
+        padding-bottom: 0;
+    
+    }
+}
