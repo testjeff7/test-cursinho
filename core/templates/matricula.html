@@ -48,7 +48,11 @@
         {% if messages %}
         <div id="action">
           {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
               <h2>Seus dados foram enviados com sucesso</h2>
+            {% else %}
+              <h2>Erro! Tente novamente!</h2>
+            {% endif %}
           {% endfor %}
         </div>
         {% endif %}

@@ -146,6 +146,6 @@ EMAIL_USE_TLS = True
 
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'testemailjeff7@gmail.com'
-EMAIL_HOST_PASSWORD = 'test07jeff_1'
+EMAIL_HOST_PASSWORD = 'dvmpnfthxkiqrxpt'
 
 CONTACT_EMAIL = 'testemailjeff7@gmail.com'

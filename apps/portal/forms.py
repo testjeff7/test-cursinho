@@ -104,7 +104,7 @@ class FormMatricula(forms.Form):
     indicacao = forms.CharField(
         label='Indicação',
         max_length=255,
-        required=True,
+        required=False,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite como conheceu...'})
     )
     blusa = forms.ChoiceField(

@@ -213,6 +213,17 @@
         <h1 class="preto">{{ contatos.titulo }}</h1>
         <p class="textinho">{{ contatos.subtitulo }}</p>
         <div class="container-fluid form-inst">
+            {% if messages %}
+            <div id="action">
+              {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                  <h2>Mensagem enviada com sucesso</h2>
+                {% else %}
+                  <h2>Erro ao tentar enviar! Tente novamente!</h2>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
             <div class="row">
                 <div class="col-sm">
                         <form method="POST" action="{% url 'index' %}"> {% csrf_token %}

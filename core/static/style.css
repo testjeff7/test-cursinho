@@ -497,6 +497,19 @@ opacity:1;
 }
 /* Parceiros */
 /* contato */
+#action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #87c940;
+    color: #FFF;
+    background-color: #a0d468;
+    width: 60%;
+    border-radius: 15px;
+    margin-left: 20%;
+    margin-top: 20px ;
+   }
+
 #contato{
     background: #F5F8FC;
     padding-top: 50px;

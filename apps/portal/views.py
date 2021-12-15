@@ -18,7 +18,7 @@ def index(request):
                 form = FormContato()
                 messages.success(request, 'Enviado com sucesso!')
             except:
-                messages.error(request, 'Erro no envio!')
+                messages.error(request, 'Erro ao enviar! Tente novamente!')
             
             return HttpResponseRedirect(reverse('index'))
     else:
@@ -58,7 +58,7 @@ def matricula(request):
                 form = FormMatricula()
                 messages.success(request, 'Enviado com sucesso!')
             except:
-                messages.error(request, 'Erro no envio!')
+                messages.error(request, 'Erro ao enviar! Tente novamente!')
             return HttpResponseRedirect(reverse('matricula'))
     else:
         form = FormMatricula()
