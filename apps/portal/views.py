@@ -20,7 +20,7 @@ def index(request):
             except:
                 messages.error(request, 'Erro ao enviar! Tente novamente!')
             
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('index') + '#contato')
     else:
         form = FormContato()
 
