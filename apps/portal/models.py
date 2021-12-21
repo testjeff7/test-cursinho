@@ -159,7 +159,7 @@ class Contatos(models.Model):
     facebook = models.CharField('Facebook', blank=False, max_length=255)
     whatsapp = models.CharField('Whatsapp', blank=False, max_length=255)
     telefone1 = models.CharField('Telefone', blank=False, max_length=255)
-    telefone2 = models.CharField('Segundo telefone', blank=True, max_length=255)
+    # telefone2 = models.CharField('Segundo telefone', blank=True, max_length=255)
     horarioM = models.CharField('Horário de funcionamento - Manhã', blank=False, max_length=255)
     horarioT = models.CharField('Horário de funcionamento - Tarde', blank=False, max_length=255)
     mapa = models.CharField('Google Maps', blank=False, max_length=500)

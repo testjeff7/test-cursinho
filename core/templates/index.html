@@ -15,10 +15,14 @@
         <script type="text/javascript" src="{% static '.\bootstrap-4.3.1-dist\js\bootstrap.min.js' %}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'fontawesome/fontawesome-free-5.10.2-web/css/all.css' %}">
+        
         <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static './style.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static './fontawesome/fontawesome-free-5.10.2-web/css/all.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">          
+
+        <link rel="shortcut icon" href="{% static 'imagens/cursinho.ico' %}"/>
         <style type="text/css">
             #inicio{
                 /*alterei a cor aqui em baixo*/
@@ -136,20 +140,22 @@
             <div class="row">
                 {% for curso in cursos %}
                 <div class="col-sm eaj">
+                    <a href="{{ curso.link }}">
                         <img class="lazyload" data-src="{{ curso.imagem.url }}">
+                    </a>
                         <h3>{{ curso.titulo }}</h3>
                         {% if forloop.counter == 1 %}
                             <div class="eaj-carousel">
                         {% else %}
                             <div class="ifrn-carousel">
                         {% endif %}
-                        <div>
+                        <div class="test">
                             <p>{{ curso.texto1  }}</p>
                         </div>
-                        <div>
+                        <div class="test">
                             <p>{{ curso.texto2  }}</p>
                         </div>
-                        <div>
+                        <div class="test">
                             <p>{{ curso.texto3  }}</p>
                         </div>
                     </div>
@@ -314,7 +320,6 @@
                 <div class="col-sm">
                     <h6>CENTRAL DE ATENDIMENTO</h6>
                     <p>{{contatos.telefone1}}</p>
-                    <p>{{contatos.telefone2}}</p>
                 </div>
                 <div class="col-sm icone">
                     <a title="instagram" href="{{ contatos.instagram }}" target="_blank" rel="noopener"><i
@@ -333,10 +338,13 @@
         </div>
     </footer>
     
-    <a id="Topo" class="link-inicio"><img src="{% static './imagens/topo.png' %}"></a>     
+    <a id="Topo" class="link-inicio"><img src="{% static 'imagens/topo.png' %}"></a>     
     
-    <script async type="text/javascript" src="{% static 'slick/slick.min.js' %}"> </script>
     <script async type="text/javascript" src="{% static './functions.js' %}" ></script>
     <script async type="text/javascript" src="{% static 'lazysizes.min.js' %}"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
 </body>
 </html>

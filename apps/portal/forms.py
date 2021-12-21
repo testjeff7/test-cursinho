@@ -50,19 +50,19 @@ class FormContato(forms.Form):
 class FormMatricula(forms.Form):
     #informações do Aluno
     nome_aluno = forms.CharField(
-        label='Nome',
+        label='Nome completo do Aluno',
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu nome...'})
     )
     endereco = forms.CharField(
-        label='Endereço',
+        label='Endereço completo',
         max_length=300,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu endereço...' })
     )
     telefone_aluno = forms.CharField(
-        label='Telefone',
+        label='Contato do aluno',
         max_length=20,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu telefone...'})
@@ -72,14 +72,25 @@ class FormMatricula(forms.Form):
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o email...'})
     )
+    tem_whatsapp = forms.ChoiceField(
+        label='Esse número tem Whatsapp?',
+        choices=HAS_WPP,
+        required=True
+    )
+    data_nascimento = forms.CharField(
+        label='Data de nascimento',
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite a data...'})
+    )
     escola = forms.CharField(
-        label='Escola de origem',
+        label='Escola que frequenta atualmente',
         max_length=150,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite a escola...'})
     )
     periodo = forms.CharField(
-        label='Período',
+        label='Série de ensino',
         max_length=100,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o seu período...'})
@@ -102,7 +113,7 @@ class FormMatricula(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu CPF...'})
     )
     indicacao = forms.CharField(
-        label='Indicação',
+        label='Quem indicou o Cursinho:',
         max_length=255,
         required=False,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite como conheceu...'})
@@ -111,6 +122,30 @@ class FormMatricula(forms.Form):
         label='Tamanho da blusa',
         choices=BLUSAS,
         required=True
+    )
+    nome_pai = forms.CharField(
+        label='Nome completo do pai',
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o nome do pai...'})
+    )
+    nome_mae = forms.CharField(
+        label='Nome completo da mãe',
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o nome da mãe...'})
+    )
+    telefone_pai = forms.CharField(
+        label='Contato do pai',
+        max_length=20,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o telefone do pai...'})
+    )
+    telefone_mae = forms.CharField(
+        label='Contato da mãe',
+        max_length=20,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o telefone da mãe...'})
     )
 
     #Responsável
@@ -121,15 +156,26 @@ class FormMatricula(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o nome do responsável...'})
     )
     telefone_responsavel = forms.CharField(
-        label='Telefone',
+        label='Contato',
         max_length=255,
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o telefone do responsável...'})
+    )
+    tem_whatsapp_responsavel = forms.ChoiceField(
+        label='Esse número tem Whatsapp?',
+        choices=HAS_WPP,
+        required=True
     )
     email_responsavel = forms.EmailField(
         label='E-mail',
         required=True,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite o e-mail do reponsável...'})
+    )
+    endereco_responsavel = forms.CharField(
+        label='Endereço completo',
+        max_length=300,
+        required=True,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Digite seu endereço...' })
     )
     rg_responsavel = forms.CharField(
         label='RG',
@@ -148,19 +194,28 @@ class FormMatricula(forms.Form):
         subject = 'Solicitação de Matrícula de %s' % self.cleaned_data['nome_aluno']
         context = {
             'nome_aluno': self.cleaned_data['nome_aluno'],
+            'endereco': self.cleaned_data['endereco'],
             'telefone_aluno': self.cleaned_data['telefone_aluno'],
             'email_aluno': self.cleaned_data['email_aluno'],
-            'curso': self.cleaned_data['curso'],
-            'endereco': self.cleaned_data['endereco'],
+            'tem_whatsapp': self.cleaned_data['tem_whatsapp'],
+            'data_nascimento': self.cleaned_data['data_nascimento'],
             'escola': self.cleaned_data['escola'],
             'periodo': self.cleaned_data['periodo'],
+            'curso': self.cleaned_data['curso'],
             'rg_aluno': self.cleaned_data['rg_aluno'],
             'cpf_aluno': self.cleaned_data['cpf_aluno'],
             'indicacao': self.cleaned_data['indicacao'],
             'blusa': self.cleaned_data['blusa'],
+            'nome_pai': self.cleaned_data['nome_pai'],
+            'nome_mae': self.cleaned_data['nome_mae'],
+            'telefone_pai': self.cleaned_data['telefone_pai'],
+            'telefone_mae': self.cleaned_data['telefone_mae'],
+
             'nome_responsavel': self.cleaned_data['nome_responsavel'],
             'telefone_responsavel': self.cleaned_data['telefone_responsavel'],
-            'email_responsavel': self.cleaned_data['telefone_responsavel'],
+            'tem_whatsapp_responsavel': self.cleaned_data['tem_whatsapp_responsavel'],
+            'email_responsavel': self.cleaned_data['email_responsavel'],
+            'endereco_responsavel': self.cleaned_data['endereco_responsavel'],
             'rg_responsavel': self.cleaned_data['rg_responsavel'],
             'cpf_responsavel': self.cleaned_data['cpf_responsavel'],
         }

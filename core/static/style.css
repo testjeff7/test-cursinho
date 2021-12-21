@@ -338,6 +338,36 @@ opacity:1;
     display: block;
     height: 300px;
 }
+
+
+.test {
+    height: 275px;overflow-y: scroll;
+    }
+    .test {
+        scrollbar-width: thin;
+        scrollbar-color: #DE7138 #F5F8FC;
+      }
+      
+      /* Works on Chrome, Edge, and Safari */
+      .test::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      .test::-webkit-scrollbar-track {
+        background: #F5F8FC;
+      }
+      
+      .test::-webkit-scrollbar-thumb {
+        background-color: #DE7138;
+        border-radius: 20px;
+        border: 3px solid #F5F8FC;
+      }
+
+      .slick-dots {
+          bottom: -42px !important; /*concerta*/
+      }
+
+
 #curso p{
     text-align: left;
     font-family: 'Open Sans';
